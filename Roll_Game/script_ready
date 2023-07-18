@@ -1,0 +1,95 @@
+'use strict';
+
+// przypisanie klas i ID do zmienych
+const score0El = document.querySelector('#score--0'); // przypisanie ID
+const score1El = document.getElementById('score--1'); //przypisanie ID innym sposobem
+const current0El = document.getElementById('current--0'); // wynik w jednej grze dla gracza 1
+const current1El = document.getElementById('current--1'); // wynik w jednej grze dla gracza 2
+const diceEl = document.querySelector('.dice'); //przypisanie klasy
+const btnNew = document.querySelector('.btn--new');
+const btnRoll = document.querySelector('.btn--roll');
+const btnHold = document.querySelector('.btn--hold');
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
+
+// Warunki początkowe
+let scores, currentScore, activePlayer, playing;
+const init = function () {
+  scores = [0, 0]; //macierz, która trzyma wyniki obu graczy
+  currentScore = 0; // wynik uzbierany podczas jednej tury rzutów kostką
+  activePlayer = 0; //który gracz gra
+  playing = true; //wartość, która wyznacza czy ktoś wygrał czy nie i można kontynuować
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  diceEl.classList.add('hidden'); //Kostka zostaje ukryta
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
+init();
+
+//funkcja, która zmienia gracza
+const switchPlayer = function () {
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active'); //Toggle usuwa klase jezeli jest albo dodaje jezeli nie ma
+  player1El.classList.toggle('player--active'); //Toggle usuwa klase jezeli jest albo dodaje jezeli nie ma
+};
+
+//wciśnięcie Roll dice
+btnRoll.addEventListener('click', function () {
+  if (playing) {
+    // 1. Wygenerowanie liczby od 1-6 losowo
+    const dice = Math.trunc(Math.random() * 6) + 1;
+
+    // 2. Wyświetlić liczbe
+    diceEl.classList.remove('hidden');
+    diceEl.src = `dice-${dice}.png`;
+
+    // 3. Sprawdzić czy nie jest 1, jeżeli tak zmienić na innego gracza
+    if (dice !== 1) {
+      // dodać liczbę z kostki do current score
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore; //wybieranie dynamiczne, który gracz ma dostać pkt
+    } else {
+      switchPlayer();
+    }
+  }
+});
+
+// wciśnięcie hold
+btnHold.addEventListener('click', function () {
+  if (playing) {
+    // 1. Dodać wynik do wyniku całkowitego
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+
+    // 2. Sprawdzić czy gracz ma >=100pkt
+    if (scores[activePlayer] >= 100) {
+      // Finish the game
+      playing = false;
+      diceEl.classList.add('hidden');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('player--winner');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active');
+    } else {
+      // Switch to the next player
+      switchPlayer();
+    }
+  }
+});
+
+// wciśnięcie przycisku New Game
+btnNew.addEventListener('click', function () {
+  init();
+});
