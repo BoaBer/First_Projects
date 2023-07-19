@@ -1,0 +1,77 @@
+/* background: #c0eb75, #ffe066 */
+/* font: #495057 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  /* background: linear-gradient(to right bottom, #ffe066, #c0eb75); */
+  background-color: #495057;
+  line-height: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  align-content: space-around;
+  margin: 0 auto;
+  max-width: 120rem;
+  height: 100vh;
+}
+
+.heading-title {
+  font-weight: 500;
+  font-size: 5.2rem;
+  margin: 8rem 0;
+  line-height: 1.1;
+}
+
+.heading-time {
+  font-weight: 700;
+  font-size: 8.6rem;
+  margin-bottom: 2rem;
+}
+
+.heading-date {
+  font-weight: 400;
+  font-size: 4.4rem;
+  margin-bottom: 8rem;
+}
+
+.btn,
+.btn--switch:link,
+.btn--switch:visited {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 1.2rem 1.2rem;
+  border-radius: 18px;
+  background-color: #fd7e14;
+  color: #fff;
+  box-shadow: -1px 1px 3px 0 black;
+  transition: all 0.2s;
+
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--switch:active {
+  box-shadow: 2px -2px 3px 0px black;
+}
+.btn--switch:hover {
+  color: black;
+  background-color: #fff;
+}
