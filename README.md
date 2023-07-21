@@ -15,9 +15,9 @@ Programming languages ​​used in the projects: HTML, CSS, JavaScript.
 3) Digital_clock - Simple design for measuring time, showing date and time. The user has the option to change the format
    of the displayed time - time based on the 12 or 24 hour system.
 
-4) To_Do_App - An app where you save things to do. The app allows you to manage your time better and faster.
+4) To_Do_App - An app where you create a list of things to do. The app allows you to manage your time better and faster.
    You can easily edit the list. Saved items are stored in localStorage at your browser.
 
 5) Expense_Tracker - A programme designed to manage expenses in a simple and convenient way.
-   The application stores the method of payment, date, expense category and amount of all expenses entered.
+   The application stores the method of payment, date, expense category and amount of all entered expenses.
    All spending in one place, sorted and organised.
