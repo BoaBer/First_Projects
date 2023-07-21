@@ -1,0 +1,118 @@
+:root {
+  --background: #f2f7f5;
+  --paragraph: #475d5b;
+  --button-text: #00473e;
+  --headline: #00473e;
+  --button: #faae2b;
+
+  --stroke: #00332c;
+  --btn-delete: #fa5246;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 120rem;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+p,
+label {
+  color: var(--paragraph);
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  line-height: 3.4rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 6.4rem;
+}
+
+.headline {
+  color: var(--headline);
+  font-size: 6.4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+#thingsToDo {
+  padding: 2rem 1.6rem;
+  width: 100%;
+  border: none;
+  border-radius: 1.8rem;
+  font-size: 1.8rem;
+}
+
+form > button {
+  margin-top: 1.6rem;
+  padding: 2rem;
+  border-radius: 3px;
+  font-weight: bold;
+  color: var(--button);
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.addThing {
+  background-color: var(--button-text);
+}
+
+.clearAll {
+  background-color: var(--btn-delete);
+  color: var(--button-text);
+}
+
+#listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  list-style: none;
+  padding-left: 0;
+  margin-top: 6rem;
+}
+
+li {
+  margin-bottom: 2.4rem;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.delete-btn {
+  width: 19px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  background-color: var(--btn-delete);
+  color: var(--button-text);
+  cursor: pointer;
+}

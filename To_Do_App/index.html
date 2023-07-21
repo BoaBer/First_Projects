@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="'To Do' App created to help you orgenized your things to do. You can add and check what's left and deleted things currently done. You will never forget what you have to do!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+
+    <title>To Do App 🗒️</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1 class="headline">To Do App</h1>
+          <p>
+            The perfect app created to help you orgenized your things to do. You
+            can add and check what's left and deleted things currently done. You
+            will never forget what you have to do!
+          </p>
+        </div>
+        <form>
+          <label for="thingsToDo">Things you have to do: </label>
+          <input
+            type="text"
+            name="thingsToDo"
+            id="thingsToDo"
+            placeholder="Enter here"
+            required
+          />
+          <button class="addThing" onclick="saveThingToDo(event)">Add</button>
+          <button class="clearAll" onclick="clearAll(event)">Clear All</button>
+        </form>
+      </div>
+      <ul id="listContainer"></ul>
+    </div>
+  </body>
+</html>

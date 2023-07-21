@@ -1,0 +1,140 @@
+:root {
+  --background: #fffffe;
+  --paragraph: #5f6c7b;
+  --headline: #094067;
+  --button: #3da9fc;
+  --button-text: #fffffe;
+
+  --table: #094067;
+  --table-head: #fffffe;
+  --table-body: #90b4ce;
+
+  --delete-btn: #ef4565;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 120rem;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: var(--headline);
+  line-height: 1;
+}
+
+.heading-secondary {
+  font-weight: 500;
+  margin: 3rem 0;
+  font-size: 3.6rem;
+  color: var(--paragraph);
+}
+
+#form-c {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5rem;
+  row-gap: 1rem;
+}
+
+.btn-c {
+  grid-column: 1/-1;
+  margin: 2rem auto 4rem auto;
+}
+
+.btn-add,
+.btn-add:link,
+.btn-add:visited {
+  width: 18rem;
+  height: 3rem;
+  border-radius: 15px;
+  cursor: pointer;
+  color: var(--button-text);
+  background-color: var(--button);
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-add:hover,
+.btn-add:active {
+  background-color: var(--headline);
+}
+
+input {
+  width: 18rem;
+}
+
+label {
+  display: inline-block;
+  width: 7rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--table-head);
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table {
+  width: 56rem;
+  background-color: var(--table);
+}
+
+th {
+  color: var(--table-head);
+  width: 14rem;
+  height: 5rem;
+  font-size: 1.6rem;
+}
+
+tbody {
+  color: var(--table-body);
+}
+
+td {
+  height: 3rem;
+  font-size: 1.4rem;
+}
+
+.btn {
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  font-size: 2rem;
+  color: var(--delete-btn);
+}
