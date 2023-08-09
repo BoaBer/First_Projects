@@ -6,7 +6,7 @@ Programming languages ​​used in the projects: HTML, CSS, JavaScript.
 
 https://expensetracker--boaber.repl.co/
 
-![Budget_Project](https://github.com/BoaBer/First_Projects/assets/132903600/09ebaf54-9904-4a27-abed-d3a4a6a81da6)
+![Budget_Project](https://github.com/BoaBer/First_Projects/assets/132903600/d77a3270-c1a2-4180-a5ae-1306f4d4626e)
 
 2) To_Do_App - An app where you create a list of things to do. The app allows you to manage your time better and faster.
    You can easily edit the list. Saved items are stored in localStorage at your browser.
