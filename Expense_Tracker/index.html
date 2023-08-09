@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/queries.css" />
+    <script defer src="./script.js"></script>
+    <title>💲Budget Project</title>
+  </head>
+  <body>
+    <header>
+      <h1>BUDGET <span class="year">year</span></h1>
+    </header>
+
+    <form class="sorting">
+      <div class="sorting-container">
+        <div class="month-container">
+          <label class="label-month" for="month">SELECT MONTH</label>
+          <input id="month" type="month" />
+        </div>
+
+        <select id="category">
+          <option value="0">Select a category</option>
+          <option value="food">Food</option>
+          <option value="clothes">Clothes</option>
+          <option value="cosmetics">Cosmetics</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="sport">Sport</option>
+        </select>
+
+        <select id="sort">
+          <option value="0">Sort by</option>
+          <option value="date-descending">Date descending</option>
+          <option value="date-increasing">Date ascending</option>
+          <option value="price-descending">Price descending</option>
+          <option value="price-increasing">Price ascending</option>
+        </select>
+
+        <button class="btn btn-sort">Apply</button>
+      </div>
+
+      <div class="feature-movements">
+        <h2 class="hidden">Planned expenditure</h2>
+        <label class="switch">
+          <input type="checkbox" name="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </form>
+
+    <div class="container">
+      <main class="movements">
+        <section class="movement-row">
+          <div class="movement-row-title">DATE</div>
+          <div class="movement-row-title">CATEGORY</div>
+          <div class="movement-row-title">DESCRIPTION</div>
+          <div class="movement-row-title">AMOUNT</div>
+        </section>
+        <section class="movements-container"></section>
+      </main>
+
+      <aside class="price-container">
+        <div class="sum-movements"><p class="sum">0</p></div>
+        <div class="add-movement">
+          <p>New expense</p>
+          <form class="new-movement">
+            <input id="new-mov-date" type="date" required />
+
+            <select name="category" id="new_category" required>
+              <option value="0">Select a category</option>
+              <option value="food">Food</option>
+              <option value="clothes">Clothes</option>
+              <option value="cosmetics">Cosmetics</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="sport">Sport</option>
+            </select>
+
+            <input
+              id="new-mov-about"
+              type="text"
+              placeholder="Short description"
+              required
+            />
+            <input
+              id="new-mov-price"
+              type="number"
+              placeholder="Amount"
+              required
+            />
+            <button class="btn btn-add">Add</button>
+          </form>
+        </div>
+        <div class="calendar">
+          <div class="calendar-container">
+            <header class="calendar-header">
+              <p class="calendar-current-date"></p>
+              <div class="calendar-navigation">
+                <span id="calendar-prev">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="material-symbols-rounded left"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </span>
+                <span id="calendar-next">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="material-symbols-rounded right"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </header>
+
+            <div class="calendar-body">
+              <ul class="calendar-weekdays">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="calendar-dates"></ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

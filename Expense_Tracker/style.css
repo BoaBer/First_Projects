@@ -1,0 +1,459 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 120rem;
+  margin: 0 auto;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+
+  background-image: url(https://tapetax.pl/pic/product_foto/prodfoto4416.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 30rem;
+  opacity: 0.2;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  text-align: center;
+  color: rgb(1, 69, 91);
+}
+
+.feature-movements {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 25%;
+}
+
+h2 {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+  color: rgb(1, 69, 91);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translate(50%, -50%);
+}
+
+.month-container {
+  position: relative;
+}
+
+.label-month {
+  display: block;
+  position: absolute;
+  top: -80%;
+  left: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.sorting {
+  display: flex;
+}
+
+.sorting-container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding-right: 3.75rem;
+  margin: 3rem 0;
+  width: 75%;
+}
+
+.month-container > input,
+.sorting-container > select,
+.sorting-container > button {
+  border-radius: 5px;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0.4rem 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: rgb(1, 69, 91);
+  color: #fff;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: rgb(1, 69, 91);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 5rem;
+}
+
+.movements-container {
+  overflow-y: scroll;
+  height: 40rem;
+}
+
+.movements-container::-webkit-scrollbar {
+  display: none;
+}
+
+.movement-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid;
+  position: relative;
+}
+
+.movement-row-date,
+.movement-row-category,
+.movement-row-name,
+.movement-row-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.movement-row-category {
+  width: 12rem;
+  justify-self: center;
+  border: none;
+  border-radius: 2rem;
+}
+
+.movement-row-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgb(1, 69, 91);
+}
+
+.btn-delete {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+  color: rgb(1, 69, 91);
+  text-align: center;
+}
+
+.btn-delete:hover {
+  background-color: red;
+  color: #fff;
+}
+
+.food {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.clothes {
+  background-color: rgb(100, 211, 248);
+}
+
+.cosmetics {
+  background-color: pink;
+}
+
+.entertainment {
+  background-color: greenyellow;
+}
+
+.sport {
+  background-color: plum;
+}
+
+.price-container {
+  height: 43%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sum-movements {
+  height: 4.5rem;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: rgb(1, 69, 91);
+}
+
+.sum-movements > p {
+  transform: translateY(-50%);
+}
+
+.add-movement {
+  height: 22rem;
+  width: 23.2rem;
+  padding: 1rem 2rem;
+  border: 1px solid rgb(1, 69, 91);
+  border-radius: 2rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.12);
+}
+
+.add-movement > p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(1, 69, 91);
+}
+
+.new-movement {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.btn-add {
+  border-radius: 2rem;
+  margin-top: 2rem;
+}
+
+.new-movement > input,
+.new-movement > select,
+.new-movement > button {
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0 0.2rem;
+  font-family: inherit;
+}
+
+.calendar {
+  margin-top: 1rem;
+  border: 1px solid rgb(1, 69, 91);
+  border-radius: 2rem;
+}
+
+/*              SWITCH         */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(1, 69, 91);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(1, 69, 91);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* CALENDAR */
+.calendar-container {
+  background: #fff;
+  width: 23rem;
+  height: 18rem;
+  border-radius: 2rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.12);
+}
+
+.calendar-container header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: space-between;
+  position: relative;
+}
+
+header .calendar-navigation {
+  display: flex;
+}
+
+header .calendar-navigation span {
+  height: 0.5rem;
+  width: 4rem;
+  margin: 0 0.1rem;
+  cursor: pointer;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+  user-select: none;
+  color: #aeabab;
+  font-size: 1.9rem;
+}
+
+.calendar-navigation span:last-child {
+  margin-right: -10rem;
+}
+
+header .calendar-navigation span:hover {
+  background: #f2f2f2;
+}
+
+header .calendar-current-date {
+  padding: 0.5rem 0 0 0.5rem;
+  font-weight: 500;
+  font-size: 1.45rem;
+}
+
+.calendar-body {
+  padding: 0.5rem;
+}
+
+.calendar-body ul {
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+}
+
+.calendar-body .calendar-dates {
+  margin-bottom: 0.5rem;
+}
+
+.calendar-body li {
+  width: calc(100% / 7);
+  font-size: 1rem;
+  color: #414141;
+}
+
+.calendar-body .calendar-weekdays li {
+  cursor: default;
+  font-weight: 500;
+}
+
+.calendar-body .calendar-dates li {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.calendar-dates li.inactive {
+  color: #aaa;
+}
+
+.calendar-dates li.active {
+  color: #fff;
+}
+
+.calendar-dates li::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+  background-color: rgb(1, 69, 91);
+  width: 2rem;
+  height: 2rem;
+}
+
+.calendar-dates li:not(.active):hover::before {
+  background: #e4e1e1;
+  width: 2rem;
+  height: 2rem;
+}
+
+.material-symbols-rounded {
+  width: 2rem;
+  position: absolute;
+  stroke: rgb(1, 69, 91);
+}
+
+.right {
+  right: 5%;
+}
+
+.left {
+  right: 15%;
+}

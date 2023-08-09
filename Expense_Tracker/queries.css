@@ -1,0 +1,80 @@
+@media (max-width: 73em) {
+  h2 {
+    top: 10%;
+    left: 50%;
+  }
+
+  body::after {
+    min-height: 70rem;
+  }
+}
+
+@media (max-width: 56em) {
+  .feature-movements {
+    justify-content: center;
+    width: auto;
+  }
+  .sorting-container {
+    justify-content: space-between;
+    width: 90%;
+  }
+  h2 {
+    top: 20%;
+    left: -60%;
+    font-size: 1.2rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 3rem;
+  }
+
+  .movements-container {
+    height: 28rem;
+  }
+
+  .price-container {
+    margin-top: 3rem;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 49em) {
+  .sorting-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+
+  .sorting-container > * {
+    flex: 1 1 30%;
+  }
+
+  #month {
+    width: 100%;
+  }
+
+  .price-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  body::after {
+    min-height: 90rem;
+  }
+}
+
+@media (max-width: 41em) {
+  .movement-row-name {
+    text-align: center;
+  }
+
+  body::after {
+    min-height: 120rem;
+  }
+
+  .price-container {
+    flex-direction: column;
+  }
+}
